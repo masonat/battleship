@@ -23,7 +23,7 @@ public:
 
     // functions + methods
     virtual void takeShot();
-    void checkWinner(Player pObj);
+    bool checkWinner(Player pObj);
     void updateCounter(char counterChar);
     void whichShip(char counterChar);
 

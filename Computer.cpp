@@ -28,14 +28,15 @@ void Computer::takeShot(Grid &gridObj) {
     //cout << "Second " << intInput << endl; // for testing
 
 
-    // i dont understand why these don't work. i've tried the character using just '~' and as 126 for the character code
-    // the code updates
+
+
+
     if (gridObj.board[intInput][charInput] == '~'){
         cout << "Computer missed at " << charInput + 1 << " " << to_string(intInput + 1) << endl;
         gridObj.board[intInput][charInput] = 'X'; // for a miss the board updates to X
     }
 
-    else if (gridObj.board[intInput][charInput] != '~'){ // DONT FORGET TO INCLUDE FOR 0 AND X ~~~~~~~~~~~!~#~!#~@$@$@!$!$@!
+    else if (gridObj.board[intInput][charInput] != '~'){  
         counterUpdater = gridObj.board[intInput][charInput];
         updateCounter(counterUpdater); // updates computer counters!
         cout << "Computer hit your "; whichShip(counterUpdater);
@@ -51,7 +52,5 @@ void Computer::takeShot(Grid &gridObj) {
     }
 
     gridObj.printBoard();
-    //checkWinner(gridObj)
-
 
 }

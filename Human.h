@@ -16,7 +16,7 @@ public:
     Human(); // default constructor
 
     // functions + methods
-    void takeShot(Grid &gridObj);
+    void takeShot(Grid &gridObj, Grid humanBoard);
 
 };
 

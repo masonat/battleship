@@ -142,13 +142,29 @@ void const Grid::checkValidity() { // if all these add up to expected totals all
     }
 }
 
-void Grid::printBoard() {
-    cout << "    A B C D E F G H I J" << endl;
-    cout << "    % % % % % % % % % %" << endl;
+void Grid::printBoard(bool hideShips) {
+    cout << "     A B C D E F G H I J" << endl;
+    cout << "     % % % % % % % % % %" << endl;
     for (int i = 0; i < BOARD_ROWS; i++){
         cout << i + 1 << " % ";
+        if ((i + 1) != 10)
+        {
+          cout << " ";
+        }
         for (int j = 0; j < BOARD_COLUMNS; j++){
-            cout << board[i][j] << " ";
+            if (!hideShips){
+              cout << board[i][j] << " ";
+            }
+            else
+            {   if (board[i][j] != 'X' && board[i][j] != 'O')
+                {
+                    cout << "~ ";
+                }
+                else // If it IS X or O, print the board
+                {
+                  cout << board[i][j] << " ";
+                }
+            }
         }
         cout << endl;
     }

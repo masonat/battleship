@@ -23,12 +23,12 @@ void Player::checkWinner(Player pObj) { // dont think i have LOGICAL STATEMENTS 
    // are ALL greater than 0
    // winner is determined
    // for example if all HUMAN counters are 1 then HUMAN WINS
-   if (!(carrierCounter == 0 && battleshipCounter == 0 && cruiserCounter == 0
-        && submarineCounter == 0 &&  destroyerCounter == 0)){
+   if (carrierCounter > 0 && battleshipCounter > 0 && cruiserCounter > 0
+        && submarineCounter > 0 &&  destroyerCounter > 0){
         cout << "The winner is " << getPlayerName() << endl;
-        // print boards and all guesses
-        exit(0);
+
    }
+
 }
 
 void Player::updateCounter(char counterChar) {

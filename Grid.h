@@ -17,7 +17,7 @@ public:
     void setBoard (vector <Ship> name, Grid &gridName);
 
     // functions + methods
-    void printBoard();
+    void printBoard(bool hideShips = false);
     void  const checkValidity();
 
     friend class Human;

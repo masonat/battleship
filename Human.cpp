@@ -6,7 +6,7 @@ Human::Human() {
 }
 
 
-void Human::takeShot(Grid &gridObj) { // should pass in COMPUTER OBJECT
+void Human::takeShot(Grid &gridObj, Grid humanBoard) { // should pass in COMPUTER OBJECT
 
 
     char charInput;
@@ -14,16 +14,20 @@ void Human::takeShot(Grid &gridObj) { // should pass in COMPUTER OBJECT
     char counterUpdater;
 
     char quit;
-    while (quit != 'N') { // allow user to quit at beginning of each turn
+     while (quit != 'N') { // allow user to quit at beginning of each turn
         cout << "Would you like to quit the game? (N) for no, (Q) for yes." << endl;
         cin >> quit;
         if (quit == 'Q') {
-            cout << "You have quit the game" << endl;
-            // print boards and guesses !#%@#^^#!@#@$
-            exit(1);
+            cout << "You are quitting the game. " << endl;
+
+            cout << "=== Computer Board ===\n" << endl;
+            gridObj.printBoard();
+            cout << "=== Player Board ===\n" << endl;
+            humanBoard.printBoard();
+            exit(0);
             // display final boards
         } else if (quit == 'N') {
-            // just continue on in stuff
+            // just continue on stuff
         } else {
             cout << "That wasn't an option\n";
             cout << "Try again\n";
@@ -32,8 +36,7 @@ void Human::takeShot(Grid &gridObj) { // should pass in COMPUTER OBJECT
 
 
     cout << "Where would you like to fire a missile?\n"
-            "Please enter a UPPERCASE letter first followed by a space followed by a number\n"
-            "Example C 4\n" << endl;
+            "Please enter a UPPERCASE letter first followed by a space followed by a number. Example C 4\n" << endl;
     cin >> charInput >> intInput;
 
     int humanRow = (int)charInput - 65;
@@ -62,7 +65,7 @@ void Human::takeShot(Grid &gridObj) { // should pass in COMPUTER OBJECT
         gridObj.board[humanColumn][humanRow] = 'O'; // for a hit the board shows O
     }
 
-    gridObj.printBoard();
+    gridObj.printBoard(true);
 
 }
 
