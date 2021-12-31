@@ -1,15 +1,4 @@
-# battleship
-*******************************************************
-
-*  Name      : Mason Turner         
-
-*  Student ID: 106630476              
-
-*  Class     : CSCI 2312 Section 02           
-
-*  HW#       : Final Project                
-
-*  Due Date  : December 4th, 2020
+# battleship       
 
 *******************************************************
 
